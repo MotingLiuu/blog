@@ -32,6 +32,16 @@ theme: minima
 plugins:
   - jekyll-feed
 
+# Silence Sass deprecation warnings from the Minima gem (still emits
+# warnings for any custom code under assets/). Remove once Minima or our
+# own stylesheets migrate off @import / lighten() / darken().
+sass:
+  quiet_deps: true
+  silence_deprecations:
+    - import
+    - global-builtin
+    - color-functions
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
